@@ -20,7 +20,7 @@ public class Quiz {
             test.add(new Question ("2+9","11",new String[]{"11","5","2"},9));
             test.add(new Question ("2+10","12",new String[]{"4","12","3"},10)); 
             // Mistura a lista
-            //Collections.shuffle(test);
+            Collections.shuffle(test);
         }
         return test;
     }
