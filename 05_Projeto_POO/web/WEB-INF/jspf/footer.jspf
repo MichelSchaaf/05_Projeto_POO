@@ -1,0 +1,18 @@
+<%@ page pageEncoding="UTF-8" %>
+<style>
+div {
+    text-align: justify;
+    text-justify: inter-word;
+}
+</style>
+
+<footer class="container-fluid text-center">
+<p>Grupo 2 - Projeto 5 - P.o.o.</p>
+<div>
+    <p align="center">
+        <a href="https://github.com/MichelSchaaf"><img class="rounded-circle img" src="imagens/githubbutton.gif" alt="gitkitty"> Michel Schaaf Lessa</a>
+        <a href="https://github.com/AlexRFX"><img class="rounded-circle img" src="imagens/githubbutton.gif" alt="gitkitty"> Alexandre R. Ferreira</a>
+        <a href="https://github.com/victorwander"><img class="rounded-circle img" src="imagens/githubbutton.gif" alt="gitkitty"> Victor Pereira</a>
+    </p>
+</div>
+</footer>
