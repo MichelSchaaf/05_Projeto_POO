@@ -2,13 +2,24 @@
 <!-- importa as classes Question e Quiz -->
 <%@page import="br.com.fatec.quiz.Question"%>
 <%@page import="br.com.fatec.quiz.Quiz"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="br.com.fatec.quiz.User"%>nome
+<%@page import="br.com.fatec.quiz.DataUser"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>         
+
+        
+ 
 <!DOCTYPE html>
 <%@ page import="java.util.*" %>
 
 <% 
 //configura o tempo em segundos que a sessão ficará aberta    
 session.setMaxInactiveInterval(60);
+// adiciona o usuario
+        if (request.getParameter("usuario") != null){    
+        User x = new User();
+        x.setNome(request.getParameter("usuario"));
+        DataUser.getUsuarios().add(x);
+        }   
 %>
 
 <html>
@@ -16,7 +27,13 @@ session.setMaxInactiveInterval(60);
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>QUIZ - Web Quiz</title>
     </head>
-    <body>
+    <body>         
+
+           
+    <% int k = DataUser.getUsuarios().size(); %>   
+    <h3><%= k %></h3>
+  
+   
     <br>A sessão expira em : <%= session.getMaxInactiveInterval() %> segundos de inatividade.
         <% //compara as duas
         if (!request.getParameter("idsessao").equals(session.getId())){ 

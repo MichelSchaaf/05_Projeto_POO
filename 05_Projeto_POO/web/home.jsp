@@ -1,5 +1,7 @@
 <%@page import="br.com.fatec.quiz.Question"%>
 <%@page import="br.com.fatec.quiz.Quiz"%>
+<%@page import="br.com.fatec.quiz.User"%>
+<%@page import="br.com.fatec.quiz.DataUser"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -37,13 +39,14 @@
     <body>
         <h1>Web Quiz</h1>
         <h2>home</h2>
-        <form method='post' action='quiz.jsp'>
-            Usuário:<input type='text'  name='usuario' value='' >
-                    <input type='hidden'  name='idsessao' value='<%= session.getId() %>' >
-            <h3><button>Iniciar teste</button></h3>
+        
+        <form method='post' action="quiz.jsp">
+        Usuário: <input type="text" name="usuario" value='' required><br>
+        <input type='hidden'  name='idsessao' value='<%= session.getId() %>' >
+        <h3><button type='submit'>Iniciar teste</button></h3>
         </form>
-
-<!-- se o botão 'Enviar' da página quiz.jsp foi acionado...  -->        
+        
+ <!-- se o botão 'Enviar' da página quiz.jsp foi acionado...  -->        
         <%if(tested){%>
         <hr/>
         <h3>Sua nota foi: <%=grade%>%</h3>
