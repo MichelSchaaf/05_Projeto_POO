@@ -1,7 +1,7 @@
+
 package br.com.fatec.quiz;
 
-public class user {
-    
+public class User {
     private String nome;
     private String media;
 
@@ -20,5 +20,4 @@ public class user {
     public void setMedia(String media) {
         this.media = media;
     }
-
 }
