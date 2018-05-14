@@ -20,8 +20,8 @@ public class Quiz {
             test.add(new Question ("2+3","5",new String[]{"1","5","2"},9));
             test.add(new Question ("2+2","4",new String[]{"4","2","3"},10)); 
             // Mistura a lista
-            
         }
+        Collections.shuffle(test);
         return test;
     }
 }
