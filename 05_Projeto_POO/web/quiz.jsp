@@ -92,8 +92,9 @@ session.setMaxInactiveInterval(60);
         <h4>Qual a capital dos seguintes países: (tempo - <n id=numberCountdown ></n> segundos )</h4>
         <form action="home.jsp">
             <%
-            for(int i=0; i<Quiz.getTest().size(); i++){  
-            Question q = Quiz.getTest().get(i); 
+            ArrayList<Question> teste = Quiz.getTest();
+            for(int i = 0; i < teste.size(); i++){  
+            Question q = teste.get(i); 
             %>
             <h3> Q<%= q.getNumquest()%>: <%= q.getQuestion() %></h3>
 
