@@ -108,6 +108,51 @@ session.setMaxInactiveInterval(60);
             <input type='hidden'  name='idsessao' value='<%= session.getId() %>' >
             <input type='hidden'  name='usuario' value='<%=request.getParameter("usuario")%>' >
         </form> 
+        <br>
+           <!-- --------------------------------------------------------- --> 
+<n>Ultimos testes realizados por : <%= request.getParameter("usuario") %></n><br>
+<table border="1">
+        <tr>
+           <th>num</th>
+           <th>Usuário</th>
+           <th>Média</th>
+        </tr>
+
+        <% 
+            int k = DataUser.getUsuarios().size();
+            int z = 10;
+            if( k < 10){ z=k;}
+            String str1 = request.getParameter("usuario");
+            double mediageral=0;
+            double somanotas=0;
+            int count=0;
+            
+            for (int i=z; i>0; i--){ 
+
+        %>
+        
+        <%  
+            String str2 = DataUser.getUsuarios().get(k-1).getNome();
+            
+            if (str1.equals(str2)){
+            count++;    
+            somanotas=somanotas+Double.parseDouble(DataUser.getUsuarios().get(k-1).getMedia());
+        
+        %>
+           <tr>
+                <td><%= k %></td>
+                <td><%= DataUser.getUsuarios().get(k-1).getNome() %></td>
+                <td><%= DataUser.getUsuarios().get(k-1).getMedia() %></td>
+          </tr>
+         <%}%> 
+          
+       <%  k=k-1;} %>
+       
+       <br>Media Geral: <%= (somanotas/count)  %>
+       
+
+       
+</table>
     </body>
 </html>
 
